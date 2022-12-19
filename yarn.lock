@@ -2662,12 +2662,65 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@blossom-labs/rosette-radspec@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "@blossom-labs/rosette-radspec@npm:0.2.1"
+  dependencies:
+    date-fns: ^2.26.0
+  peerDependencies:
+    ethers: ^5.6.4
+  checksum: cf3082e7d4c8f6e66a2941b02e233da4a75477f1fd3bbf227d215ad28f9d4b4d3eb756011223ab2b728107f640880d25e758402662ad9f8a1b6bbe668dfece75
+  languageName: node
+  linkType: hard
+
 "@builder.io/partytown@npm:^0.5.2":
   version: 0.5.4
   resolution: "@builder.io/partytown@npm:0.5.4"
   bin:
     partytown: bin/partytown.cjs
   checksum: 2935390013f82e731160465a3b1d229cedfafec6b8c2ac7aad65e67012da0711962d9619bdffea1dbbae42b6109a89b501a655ef13a7c432bf95876f59f71f76
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-darwin-arm64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-darwin-arm64@npm:2.0.0"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-darwin-x64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-darwin-x64@npm:2.0.0"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-linux-arm64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-linux-arm64@npm:2.0.0"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-linux-arm@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-linux-arm@npm:2.0.0"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-linux-x64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-linux-x64@npm:2.0.0"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@cbor-extract/cbor-extract-win32-x64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@cbor-extract/cbor-extract-win32-x64@npm:2.0.0"
+  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -2743,6 +2796,35 @@ __metadata:
     minimatch: ^3.1.2
     strip-json-comments: ^3.1.1
   checksum: a1e734ad31a8b5328dce9f479f185fd4fc83dd7f06c538e1fa457fd8226b89602a55cc6458cd52b29573b01cdfaf42331be8cfc1fec732570086b591f4ed6515
+  languageName: node
+  linkType: hard
+
+"@ethereum-sourcify/bytecode-utils@npm:*":
+  version: 1.0.4
+  resolution: "@ethereum-sourcify/bytecode-utils@npm:1.0.4"
+  dependencies:
+    "@ethersproject/bytes": ^5.7.0
+    "@types/node": ^18.11.4
+    bs58: ^5.0.0
+    cbor-x: ^1.4.1
+    ethereum-provider: ^0.7.7
+  checksum: 37e950602ef796a738ff1c08a9c47baeceee5e98ea732eee9325b1953826bbd5ad0ea34815d34078e83d199894b74e219f33fa93d294924ef3ad4f55bfefe2df
+  languageName: node
+  linkType: hard
+
+"@ethereum-sourcify/contract-call-decoder@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@ethereum-sourcify/contract-call-decoder@npm:0.2.0"
+  dependencies:
+    "@blossom-labs/rosette-radspec": ^0.2.1
+    "@ethereum-sourcify/bytecode-utils": "*"
+    "@ethersproject/abi": ^5.7.0
+    "@ethersproject/bignumber": ^5.7.0
+    "@ethersproject/providers": ^5.7.2
+    "@ethersproject/transactions": ^5.7.0
+    ethereum-provider: ^0.7.7
+    isomorphic-fetch: ^3.0.0
+  checksum: 8165fb7bc9b3569ef968b81e1ad53e5bff04a655c3902eb54a40b46df35a75503152658f0a489d35caca269ca1873d61052cde29a1d5eb36a1f82ab7c160f134
   languageName: node
   linkType: hard
 
@@ -2973,7 +3055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ethersproject/providers@npm:5.7.2":
+"@ethersproject/providers@npm:5.7.2, @ethersproject/providers@npm:^5.7.2":
   version: 5.7.2
   resolution: "@ethersproject/providers@npm:5.7.2"
   dependencies:
@@ -5111,6 +5193,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.11.4":
+  version: 18.11.15
+  resolution: "@types/node@npm:18.11.15"
+  checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^8.5.7":
   version: 8.10.66
   resolution: "@types/node@npm:8.10.66"
@@ -6522,6 +6611,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base-x@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "base-x@npm:4.0.0"
+  checksum: b25db9e07eb1998472a20557c7f00c797dc0595f79df95155ab74274e7fa98b9f2659b3ee547ac8773666b7f69540656793aeb97ad2b1ceccdb6fa5faaf69ac0
+  languageName: node
+  linkType: hard
+
 "base64-arraybuffer@npm:0.1.4":
   version: 0.1.4
   resolution: "base64-arraybuffer@npm:0.1.4"
@@ -6900,6 +6996,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bs58@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "bs58@npm:5.0.0"
+  dependencies:
+    base-x: ^4.0.0
+  checksum: 2475cb0684e07077521aac718e604a13e0f891d58cff923d437a2f7e9e28703ab39fce9f84c7c703ab369815a675f11e3bd394d38643bfe8969fbe42e6833d45
+  languageName: node
+  linkType: hard
+
 "bser@npm:2.1.1":
   version: 2.1.1
   resolution: "bser@npm:2.1.1"
@@ -7150,6 +7255,47 @@ __metadata:
   version: 0.12.0
   resolution: "caseless@npm:0.12.0"
   checksum: b43bd4c440aa1e8ee6baefee8063b4850fd0d7b378f6aabc796c9ec8cb26d27fb30b46885350777d9bd079c5256c0e1329ad0dc7c2817e0bb466810ebb353751
+  languageName: node
+  linkType: hard
+
+"cbor-extract@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "cbor-extract@npm:2.0.2"
+  dependencies:
+    "@cbor-extract/cbor-extract-darwin-arm64": 2.0.0
+    "@cbor-extract/cbor-extract-darwin-x64": 2.0.0
+    "@cbor-extract/cbor-extract-linux-arm": 2.0.0
+    "@cbor-extract/cbor-extract-linux-arm64": 2.0.0
+    "@cbor-extract/cbor-extract-linux-x64": 2.0.0
+    "@cbor-extract/cbor-extract-win32-x64": 2.0.0
+    node-gyp: latest
+    node-gyp-build-optional-packages: 5.0.3
+  dependenciesMeta:
+    "@cbor-extract/cbor-extract-darwin-arm64":
+      optional: true
+    "@cbor-extract/cbor-extract-darwin-x64":
+      optional: true
+    "@cbor-extract/cbor-extract-linux-arm":
+      optional: true
+    "@cbor-extract/cbor-extract-linux-arm64":
+      optional: true
+    "@cbor-extract/cbor-extract-linux-x64":
+      optional: true
+    "@cbor-extract/cbor-extract-win32-x64":
+      optional: true
+  checksum: e50299622e33d179a438e413e202e2bc603d66e4860901f906e56902a4c2547e7fd0a81c7352eaf6701f26506eaf94d35cd278ff10027d447d56621d513fafbe
+  languageName: node
+  linkType: hard
+
+"cbor-x@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "cbor-x@npm:1.4.1"
+  dependencies:
+    cbor-extract: ^2.0.2
+  dependenciesMeta:
+    cbor-extract:
+      optional: true
+  checksum: c71eac36f72f86efb0c69ef98c8253f9c2100509221bddfe36b6bfa441393a1278bdbb28b84d50a80b6de7676a3f9ce517f26fc2f6b02ff8bd230569af5e54d8
   languageName: node
   linkType: hard
 
@@ -8153,7 +8299,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.25.0":
+"date-fns@npm:^2.25.0, date-fns@npm:^2.26.0":
   version: 2.29.3
   resolution: "date-fns@npm:2.29.3"
   checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
@@ -9532,6 +9678,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ethereum-provider@npm:^0.7.7":
+  version: 0.7.7
+  resolution: "ethereum-provider@npm:0.7.7"
+  dependencies:
+    events: 3.3.0
+  checksum: d6afbed7aa2d6629f9a006e79bf778c7155704b2bf1c3af4da7438c1e1d3c160bce9cb30745b6396dd22538a95b84a3dc6b82268d83413c49b5d02d89b9ff156
+  languageName: node
+  linkType: hard
+
 "ethers@npm:^5.7.2":
   version: 5.7.2
   resolution: "ethers@npm:5.7.2"
@@ -9587,7 +9742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"events@npm:^3.0.0, events@npm:^3.2.0":
+"events@npm:3.3.0, events@npm:^3.0.0, events@npm:^3.2.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: f6f487ad2198aa41d878fa31452f1a3c00958f46e9019286ff4787c84aac329332ab45c9cdc8c445928fc6d7ded294b9e005a7fce9426488518017831b272780
@@ -12188,6 +12343,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"isomorphic-fetch@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "isomorphic-fetch@npm:3.0.0"
+  dependencies:
+    node-fetch: ^2.6.1
+    whatwg-fetch: ^3.4.1
+  checksum: e5ab79a56ce5af6ddd21265f59312ad9a4bc5a72cebc98b54797b42cb30441d5c5f8d17c5cd84a99e18101c8af6f90c081ecb8d12fd79e332be1778d58486d75
+  languageName: node
+  linkType: hard
+
 "isstream@npm:~0.1.2":
   version: 0.1.2
   resolution: "isstream@npm:0.1.2"
@@ -13627,7 +13792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.7, node-fetch@npm:^2.6.6, node-fetch@npm:^2.6.7":
+"node-fetch@npm:2.6.7, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.6, node-fetch@npm:^2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -16543,6 +16708,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "snap@workspace:packages/snap"
   dependencies:
+    "@ethereum-sourcify/contract-call-decoder": ^0.2.0
     "@lavamoat/allow-scripts": ^2.0.3
     "@metamask/auto-changelog": ^2.6.0
     "@metamask/eslint-config": ^10.0.0
@@ -18184,6 +18350,13 @@ __metadata:
   bin:
     webpack: bin/webpack.js
   checksum: 320c41369a75051b19e18c63f408b3dcc481852e992f83d311771c5ec0f05f2946385e8ebef62030cf3587f0a3d2f12779ffdb191569a966847289ba7313f946
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:^3.4.1":
+  version: 3.6.2
+  resolution: "whatwg-fetch@npm:3.6.2"
+  checksum: ee976b7249e7791edb0d0a62cd806b29006ad7ec3a3d89145921ad8c00a3a67e4be8f3fb3ec6bc7b58498724fd568d11aeeeea1f7827e7e1e5eae6c8a275afed
   languageName: node
   linkType: hard
 

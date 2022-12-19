@@ -1,33 +1,7 @@
 import { OnTransactionHandler } from '@metamask/snap-types';
-import {
-  add0x,
-  bytesToHex,
-  hasProperty,
-  isObject,
-  Json,
-  remove0x,
-  valueToBytes,
-} from '@metamask/utils';
+import { hasProperty, isObject, Json } from '@metamask/utils';
+import { decodeContractCall } from '@ethereum-sourcify/contract-call-decoder';
 import { utils } from 'ethers';
-
-const API_ENDPOINT = `https://www.4byte.directory/api/v1/signatures/?hex_signature=`;
-
-async function getFunctionSignatureHumanReadableFrom4byte(
-  functionSignature: string,
-) {
-  let response = await fetch(`${API_ENDPOINT}${functionSignature}`);
-  let { results } = await response.json();
-  const [matchingFunction] = results
-    .sort((a, b) => a.created_at.localeCompare(b.created_at))
-    .map((value) => value.text_signature);
-
-  if (!matchingFunction) {
-    console.log('No Matching Function found!');
-    return;
-  }
-
-  return matchingFunction;
-}
 
 export const onTransaction: OnTransactionHandler = async ({
   transaction,
@@ -47,78 +21,33 @@ export const onTransaction: OnTransactionHandler = async ({
   }
 
   let { from, to, data, value } = transaction;
-  let functionSignature = data.slice(0, 8);
+  let toAddress = utils.getAddress(to as string);
+  console.log(toAddress);
 
-  let matchingFunction = await getFunctionSignatureHumanReadableFrom4byte(
-    functionSignature,
+  const chainIdInt = parseInt(chainId.replace('eip155:', ''), 16);
+
+  // example
+  // const tx = {
+  //   to: '0x05c99480624597944e50515a86d1Ec1aD63f23e6',
+  //   data: '0x1cf9504d00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001e0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000046369616f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000046369616f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000046369616f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000046369616f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000046369616f00000000000000000000000000000000000000000000000000000000',
+  // };
+
+  let decodedObj = await decodeContractCall(
+    { to: toAddress, data },
+    { chainId: chainIdInt },
   );
 
-  console.log(matchingFunction);
+  console.log(decodedObj);
 
-  let types = matchingFunction
-    .slice(matchingFunction.indexOf('(') + 2, matchingFunction.indexOf(')'))
-    .split(',');
+  let { contract, method } = decodedObj;
+  let { notice, selector } = method;
 
-  let functionParams = data.slice(8);
-
-  try {
-    let decoder = new utils.AbiCoder();
-    let decodedParams = decoder.decode(types, add0x(functionParams));
-    console.log(decodedParams);
-  } catch (e) {
-    return {
-      insights: {
-        Error: e,
-      },
-    };
-  }
-
-  // let toAddress = utils.getAddress(to as string);
-
-  // // const txData = remove0x(data);
-  // const chainIdInt = chainId.replace('eip155:', '');
-
-  // let url = `https://repo.sourcify.dev/contracts/full_match/${chainIdInt}/${toAddress}/metadata.json`;
-
-  // let response = await fetch(url, {
-  //   method: 'get',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // });
-
-  // if (!response.ok) {
-  //   return {
-  //     insights: {
-  //       error: 'No Data Found',
-  //     },
-  //   };
-  // }
-
-  // const { output } = await response.json();
-
-  // console.log(output.userdoc);
+  console.log(contract, method);
 
   return {
     insights: {
-      function: matchingFunction,
-      // 'What does it do?': output.userdoc.methods[matchingFunction].notice,
+      selector,
+      notice,
     },
   };
 };
-
-function normalizeAbiValue(value: unknown): Json {
-  if (Array.isArray(value)) {
-    return value.map(normalizeAbiValue);
-  }
-
-  if (value instanceof Uint8Array) {
-    return bytesToHex(value);
-  }
-
-  if (typeof value === 'bigint') {
-    return value.toString();
-  }
-
-  return value as Json;
-}

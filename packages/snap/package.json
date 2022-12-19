@@ -58,6 +58,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@ethereum-sourcify/contract-call-decoder": "^0.2.0",
     "@metamask/utils": "^3.3.1",
     "ethers": "^5.7.2"
   }

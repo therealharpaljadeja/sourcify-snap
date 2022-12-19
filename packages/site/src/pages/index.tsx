@@ -128,9 +128,10 @@ const Index = () => {
         params: [
           {
             from,
-            to: '0xebd9d99a3982d547c5bb4db7e3b1f9f14b67eb83', // Uniswap v3,
+            to: '0xcDcE084825c30a919FA74B55903a974511f131E7', // Token on polygon,
             value: '0x0',
-            data: '0xa9059cbb0000000000000000000000009eedff5f13978011fb7c4504b306aca58c2f9aad0000000000000000000000000000000000000000000005d2c72a2ac16a300000',
+            // data: '0x095ea7b30000000000000000000000003d0b1f7151346429e17e332ab8700af9daa2bff100000000000000000000000000000000000000000000000000038d7ea4c68000', //approve
+            data: '0xa9059cbb0000000000000000000000003d0b1f7151346429e17e332ab8700af9daa2bff100000000000000000000000000000000000000000000000000038d7ea4c68000', // transfer
           },
         ],
       });
@@ -143,10 +144,17 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+        Welcome to <Span>sourcify-snap</Span>
       </Heading>
       <Subtitle>
-        Get started by editing <code>src/index.ts</code>
+        Contract must be verified on{' '}
+        <a
+          href="https://sourcify.dev/#/verifier"
+          target="_blank"
+          style={{ color: 'white' }}
+        >
+          Sourcify
+        </a>
       </Subtitle>
       <CardContainer>
         {state.error && (
@@ -199,7 +207,7 @@ const Index = () => {
         )}
         <Card
           content={{
-            title: 'Send Hello message',
+            title: 'Send a sample transaction',
             description:
               'Display a custom message within a confirmation screen in MetaMask.',
             button: (
