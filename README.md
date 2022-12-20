@@ -7,6 +7,9 @@ This snap uses Sourcify to get information about the contract with which the tra
 > **Warning**
 > The human-readable description of the funciton is generated from the NatSpec comment on the function. So don't trust it blindly!
 
+> **Note**
+> The site has a example tx inside `packages/site/pages/index.tsx`
+
 ## Getting Started
 
 Clone the repository and setup the development environment:
