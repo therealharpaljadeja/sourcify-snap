@@ -1,5 +1,7 @@
 # Sourcify Metamask Snap
 
+![Screen-Recording-2022-12-20-at-7](https://user-images.githubusercontent.com/38040789/208689315-76f3e13e-cd7a-4145-86d1-c3ea616ab5f4.gif)
+
 MetaMask Snaps is a system that allows anyone to safely expand the capabilities of MetaMask. A _snap_ is a program that we run in an isolated environment that can customize the wallet experience.
 
 This snap uses Sourcify to get information about the contract with which the transaction is about to happen and provides a human-readable description of what is about to happen in the transaction.
@@ -48,3 +50,6 @@ Run `yarn lint` to run the linter, or run `yarn lint:fix` to run the linter and 
     "files": ["./node_modules/@metamask/snap-types/global.d.ts"]
   }
   ```
+- [Sourcify Repo for Contract includes code and metadata file](https://repo.sourcify.dev/contracts/full_match/80001/0xcDcE084825c30a919FA74B55903a974511f131E7/)
+
+_Questions? Dm @harpaljadeja11 on twitter_
