@@ -123,6 +123,17 @@ const Index = () => {
         method: 'eth_requestAccounts',
       })) as string[];
 
+      let networkVersion = await window.ethereum.request({
+        method: 'net_version',
+      });
+
+      if (networkVersion !== '80001') {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x13881' }],
+        });
+      }
+
       await window.ethereum.request({
         method: 'eth_sendTransaction',
         params: [
