@@ -1,0 +1,25 @@
+{
+  "version": "0.1.1",
+  "description": "An example Snap written in TypeScript.",
+  "proposedName": "From Sourcify",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/therealharpaljadeja/sourcify-snap"
+  },
+  "source": {
+    "shasum": "FuluiuACMdb1BpiMmP/MLuRBF0QATxmmwjzImO+zsEQ=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "sourcify-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:transaction-insight": {},
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}
