@@ -12,7 +12,7 @@
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "snap",
+        "packageName": "sourcify-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
