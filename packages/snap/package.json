@@ -1,6 +1,6 @@
 {
   "name": "sourcify-snap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Metamask Snap used to get human-readable transaction description from Sourcify",
   "repository": {
     "type": "git",
